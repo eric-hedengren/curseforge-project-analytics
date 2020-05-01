@@ -19,7 +19,7 @@ data['Date'] = data['Date'].astype('datetime64[ns]') # Customize date display
 start = data['Date'].values[0] # Tighten the x axis
 end = data['Date'].values[-1]
 
-plt.figure(figsize=(15,10))
+plt.figure(figsize=(12,8))
 
 plt.subplot(3,1,1)
 plt.plot(data['Date'],data['Historical Download'],'k',label='Total Downloads')

@@ -1,3 +1,3 @@
-cd C:\Users\YOURUSERNAME\Desktop\Mod Name
+cd %USERPROFILE%\Desktop\Mod Name
 python Analytics.py
 pause
