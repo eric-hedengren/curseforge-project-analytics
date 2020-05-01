@@ -1,2 +1,2 @@
-pip install pandas matplotlib
+python -m pip install pandas matplotlib
 pause
