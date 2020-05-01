@@ -10,11 +10,6 @@ The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/
 If you're adding new analytics, from a new day for example, the Analytics program [automatically finds the "latest" file](Mod%20Name/Analytics.py#L11), or the most recent one by date, so try not to rename your data files. 
 Then double click the "Analytics.py" file, and if you have python installed, it should execute. If it doesn't excute, try right clicking the Analytics.py file and open with python. Alternatively, try running the DebugGraphGenerator.bat and it will run the python file through the command prompt (This still requires python).
 
-## Debug Graph Generator Help
-By default, the ["DebugGraphGenerator.bat"](Mod%20Name/DebugGraphGenerator.bat) file looks for your folder in your desktop. 
-If you didn't move these downloaded files there, follow these instructions if you would like to debug your [Analytics.py](Mod%20Name/Analytics.py) file (only necessary if you're modifying Analytics.py). 
-Edit the text file of DebugGraphGenerator.bat by changing the file from .bat to a .txt, it should look like this "DebugGraphGenerator.txt" and [change your directory](Mod%20Name/DebugGraphGenerator.bat#L1) to match where you put your downloaded github files. After you finish, change your extension name back from a .txt to .bat so it can execute.
-
 ## Naming Saved Graphs
 The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L40).
 
