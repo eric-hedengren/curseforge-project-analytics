@@ -3,11 +3,10 @@ Simple Matplotlib program that plots data from [Curseforge Analytics](https://au
 
 ## Getting Started
 ### 1. Python Install
-
-First get the [latest python files](https://www.python.org/downloads/ "Python Download"). If python is on your computer, skip this step.
+If python is already on your computer, skip this step. First get the [latest python files](https://www.python.org/downloads/ "Python Download"). When opening the installer, make sure you select "Add Python -version- to PATH". If you don't have admin access, unselect "Install launcher for all users (recommended)", it will still work on your user.
 
 ### 2. Python Packages
-Additionally, you may have to install the [pandas](Mod%20Name/Analytics.pyw#L1) and [matplotlib](Mod%20Name/Analytics.pyw#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. You need python installed for that file to run. These first 2 steps are only required once for each new computer. If you know you have previously installed these packages, skip this step.
+Additionally, you may have to install the [pandas](Mod%20Name/Analytics.pyw#L1) and [matplotlib](Mod%20Name/Analytics.pyw#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. You need python installed for that file to run, and you know it's working when multiple loading bars appear on the command prompt. These first 2 steps are only required once for each new computer. If you know you have previously installed these packages, skip this step.
 
 ### 3. Execute Graph Generator
 To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), or double click Analytics.pyw, and either of these require steps 1 and 2. A display graph should come up that displays the most recent file in the "Data Folder" and a new graph saved to the "Graphs Folder". If this step fails, try uninstalling then reinstalling python and the packages in steps 1 and 2 from your computer. If you generate a graph that has the same name, the new graph will replace the old one. 
