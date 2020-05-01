@@ -35,5 +35,5 @@ plt.xlabel('Date')
 subplot('Points')
 
 today = datetime.today().strftime('%Y-%m-%d')
-plt.show() # Display graph
 plt.savefig('Graphs/'+today+'.png') # Save as image
+plt.show() # Optionally displays the graph
