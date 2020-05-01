@@ -2,7 +2,7 @@
 Simple Matplotlib program that plots data from [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects). If you're a author on curseforge, your projects should appear at that link. [Click here](https://www.curseforge.com/project/create "Create a CurseForge Project") if you don't see any projects and would like to make your own.
 
 ## Getting Started
-If python isn't on your computer, you can download it [here](https://www.python.org/downloads/ "Python Download").
+First get the [latest python files](https://www.python.org/downloads/ "Python Download"). If python is on your computer, skip this step.
 
 You may have to install the [pandas](Mod%20Name/Analytics.py#L1) and [matplotlib](Mod%20Name/Analytics.py#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. This is only required once for each new computer, and once you install them with no errors, you can delete that file.
 
