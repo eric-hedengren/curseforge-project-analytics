@@ -18,4 +18,4 @@ Edit the text file of DebugGraphGenerator.bat by changing the file from .bat to 
 ## Naming Saved Graphs
 The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L40).
 
-I hope this helps! Here's the [Example Mod(Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
+I hope this helps! Here's the [Example Mod (Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
