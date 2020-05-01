@@ -23,7 +23,7 @@ The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/
 If you're adding new analytics, from a new day for example, the Analytics program automatically finds the ["latest file"](Mod%20Name/Analytics.py#L11-L12) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these github files again for each mod or copy and paste the folder you already downloaded.
 
 ## Naming Saved Graphs
-The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L40).
+The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L38).
 
 ## Thanks for trying this out!
 I hope this helps! Here's the [Example Mod (Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
