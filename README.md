@@ -12,11 +12,11 @@ Additionally, you may have to install the [pandas](Mod%20Name/Analytics.py#L1) a
 
 ### 3. Execute Graph Generator
 
-To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), this requires steps 1 and 2. If this step fails, try uninstalling then reinstalling steps 1 and 2.
+To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), and this requires steps 1 and 2. If this step fails, try uninstalling then reinstalling items in steps 1 and 2.
 
 ### 4. Using Your Mod Stats
 
-The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/Data](Mod%20Name/Graphs "Data Folder") are just example files from my personal curseforge mod. To customize for your own data, go to the [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects) site, and download the stats of the project you would like to analyze. Put the downloaded file in the "Data Folder" on your desktop, and delete the example data named "Standard Materials_overview_v1_START_DATE_END_DATE".
+The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/Data](Mod%20Name/Graphs "Data Folder") are just example files from my personal curseforge mod. To customize for your own data, go to the [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects) site, and download the stats of the project you would like to analyze. Put the downloaded file in the "Data Folder" on your desktop, and delete the example data named "Standard Materials_overview_v1_START_DATE_END_DATE" as well as the graph located in the "Graphs Folder".
 
 ### 5. Adding More Data
 
