@@ -1,2 +1,2 @@
 cd ..
-python Analytics.py
+python Analytics.pyw
