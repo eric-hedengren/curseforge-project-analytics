@@ -12,7 +12,7 @@ Additionally, you may have to install the [pandas](Mod%20Name/Analytics.py#L1) a
 
 ### 3. Execute Graph Generator
 
-To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), and this requires steps 1 and 2. If this step fails, try uninstalling then reinstalling items in steps 1 and 2.
+To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), and this requires steps 1 and 2. A display graph should come up that displays the most recent file in the "Data Folder". If this step fails, try uninstalling then reinstalling python and the packages in steps 1 and 2 from your computer.
 
 ### 4. Using Your Mod Stats
 
