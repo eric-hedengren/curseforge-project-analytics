@@ -1,4 +1,4 @@
-# CurseForgeModAnalytics
+# Curse Forge Mod Analytics
 Simple Matplotlib program that plots data from [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects)
 
 ## Getting Started
