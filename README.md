@@ -20,7 +20,7 @@ The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/
 
 ### 5. Adding More Data
 
-If you're adding new analytics, from a new day for example, the Analytics program automatically finds the ["latest" file](Mod%20Name/Analytics.py#L11-L12) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these files again for each mod or copy and paste.
+If you're adding new analytics, from a new day for example, the Analytics program automatically finds the ["latest file"](Mod%20Name/Analytics.py#L11-L12) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these github files again for each mod or copy and paste the folder you already downloaded.
 
 ## Naming Saved Graphs
 The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L40).
