@@ -4,11 +4,13 @@ Simple Matplotlib program that plots data from [Curseforge Analytics](https://au
 ## Getting Started
 If python isn't on your computer, you can download it [here](https://www.python.org/downloads/ "Python Download").
 
-You may have to install the [pandas](Mod%20Name/Analytics.py#L1) and [matplotlib](Mod%20Name/Analytics.py#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. This is only required once for each new computer, and once you install them with no errors, you can delete the Install Python Packages file.
+You may have to install the [pandas](Mod%20Name/Analytics.py#L1) and [matplotlib](Mod%20Name/Analytics.py#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. This is only required once for each new computer, and once you install them with no errors, you can delete that file.
 
 The files in [Mod Name/Graphs](Mod%20Name/Graphs "Graphs Folder") and [Mod Name/Data](Mod%20Name/Graphs "Data Folder") are just example files from my personal curseforge mod. To customize for your own data, go to the [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects) site, and download the stats of the project you would like to analyze. Put the downloaded file in the "Data Folder" on your desktop, and delete the example data named "Standard Materials_overview_v1_START_DATE_END_DATE".
+
 If you're adding new analytics, from a new day for example, the Analytics program [automatically finds the "latest" file](Mod%20Name/Analytics.py#L11), or the most recent one by date, so try not to rename your data files. 
-To execute, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat) and it will run the python file through the command prompt, this requires python.
+
+To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), this requires python.
 
 ## Naming Saved Graphs
 The Analytics.py file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Mod%20Name/Analytics.py#L40).
