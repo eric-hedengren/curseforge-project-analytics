@@ -10,7 +10,7 @@ First get the [latest python files](https://www.python.org/downloads/ "Python Do
 
 Additionally, you may have to install the [pandas](Mod%20Name/Analytics.py#L1) and [matplotlib](Mod%20Name/Analytics.py#L2) packages if you haven't before (if you don't know what these are, you probably haven't) so run the [InstallPythonPackages.bat](Mod%20Name/Run/InstallPythonPackages.bat) file and it will install them for you. This is only required once for each new computer, and once you install them with no errors, you can delete that file. If you know you have previously installed these packages, skip this step.
 
-### 3. Execute
+### 3. Execute Graph Generator
 
 To execute a graph, run the [RunGraphGenerator.bat](Mod%20Name/Run/RunGraphGenerator.bat), this requires steps 1 and 2. If this step fails, try uninstalling then reinstalling steps 1 and 2.
 
