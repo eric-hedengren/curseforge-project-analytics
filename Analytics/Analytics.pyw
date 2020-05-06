@@ -11,8 +11,9 @@ def line(a, b, c): # Data, Color, Label
 def subplot(x, y):
     plt.ylabel(y)
     plt.legend(loc = 2) # Sets legend to top left
-    plt.xlim([start, end]) # Tighten the x axis
-    plt.xticks(np.arange(1, dates.size, 3)) # Set tick frequency
+    plt.xlim([start,end]) # Tighten the x axis
+    plt.xticks(np.arange(1,dates.size,3)) # Set tick frequency
+    
 
 list = glob.glob('Data/*')
 data = pd.read_csv(list[-1])
@@ -28,11 +29,15 @@ plt.figure(figsize=(12,8)) # Create figure
 
 plt.subplot(3,1,1) # Create subplots for the figure
 plt.title(data['Name'][0]) # Set title as project name
-line('Historical Download','k','Total Downloads')
+line('Historical Download','k','Total Downloads\n'+str(data['Historical Download'].values[-1]))
 subplot(1, 'Total')
 
 plt.subplot(3,1,2)
-line('Daily Download','b','Total')
+total = 0
+dl = data['Daily Download'].size
+for i in range(dl):
+    total += data['Daily Download'].values[i]
+line('Daily Download','b','Total '+ "%.2f" % (total/dl)) # Print daily average downloads
 line('Daily Unique Download','r','Unique')
 line('Daily Curse Forge Download','g','Curse Forge')
 line('Daily Twitch App Download','#800080','Twitch App')
