@@ -20,6 +20,8 @@ If you're adding new analytics, from a new day for example, the Analytics progra
 ## Other Tips
 The Analytics.pyw file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Analytics/Analytics.pyw#L54).
 
+You can customize how the dates look on the x axis [here](Analytics/Analytics.pyw#L30).
+
 You can also change the x axis date display frequency [here](Analytics/Analytics.pyw#L22).
 
 ## Thanks for trying this out!
