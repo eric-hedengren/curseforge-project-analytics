@@ -18,7 +18,9 @@ The files in [Mod Name/Data](Analytics/Data "Data Folder") and [Mod Name/Graphs]
 If you're adding new analytics, from a new day for example, the Analytics program automatically finds the [latest file](Analytics/Analytics.pyw#L11-L12) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these github files again for each mod or copy and paste the folder you already downloaded.
 
 ## Other Tips
-The Analytics.pyw file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Analytics/Analytics.pyw#L52).
+The Analytics.pyw file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Analytics/Analytics.pyw#L54).
+
+You can also change the x axis date display frequency [here](Analytics/Analytics.pyw#L22)
 
 ## Thanks for trying this out!
 I hope this helps! Here's the [Example Mod (Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
