@@ -15,7 +15,7 @@ To execute a graph, run the [RunGraphGenerator.bat](Analytics/Run/RunGraphGenera
 The files in [Mod Name/Data](Analytics/Data "Data Folder") and [Mod Name/Graphs](Analytics/Graphs "Graphs Folder") are just example files from my personal curseforge mod. To customize for your own data, go to the [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects) site, and download the stats of the project you would like to analyze. Put the downloaded file in the "Data Folder" on your desktop, and delete the example data named "Standard Materials_overview_v1_START_DATE_END_DATE", as well as the graph located in the "Graphs Folder".
 
 ### 5. Adding More Data
-If you're adding new analytics, from a new day for example, the Analytics program automatically finds the [latest file](Analytics/Analytics.pyw#L11-L12) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these github files again for each mod or copy and paste the folder you already downloaded.
+If you're adding new analytics, from a new day for example, the Analytics program automatically finds the [latest file](Analytics/Analytics.pyw#L24-L25) in your Data Folder, or the most recent one by date, so try not to rename your data files. If you would like to analyze multiple projects, simply download these github files again for each mod or copy and paste the folder you already downloaded.
 
 ## Other Tips
 The Analytics.pyw file, by default, names the new graph after the current date. If you want to change that, you can find it [here](Analytics/Analytics.pyw#L54).
