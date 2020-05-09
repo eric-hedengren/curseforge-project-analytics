@@ -19,7 +19,7 @@ def subplot(x, y):
     plt.ylabel(y)
     plt.legend(loc = 2) # Sets legend to top left
     plt.xlim([start,end]) # Tighten the x axis
-    plt.xticks(np.arange(1,dates.size,3)) # Set tick frequency
+    plt.xticks(np.arange(1,dates.size-1,3)) # Set tick frequency
 
 list = glob.glob('Data/*')
 data = pd.read_csv(list[-1])
