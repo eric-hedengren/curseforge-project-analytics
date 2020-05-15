@@ -24,5 +24,7 @@ You can customize how the dates look on the x axis [here](Analytics/Analytics.py
 
 You can also change the x axis date display frequency [here](Analytics/Analytics.pyw#L22).
 
+If you're running the "[Analytics.pyw](Analytics/Analytics.pyw)" file and would like to see the python terminal, change the file extension from ".pyw" to ".py".
+
 ## Thanks for trying this out!
 I hope this helps! Here's the [Example Mod (Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
