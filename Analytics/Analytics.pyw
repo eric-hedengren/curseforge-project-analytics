@@ -6,40 +6,41 @@ import numpy as np
 import glob
 
 def line(a, b, c): # Data, Color, Label
-    plt.plot_date(dates,data[a], b, label = c)
+    plt.plot_date(dates, data[a], b, label = c)
 
 def average(name):
     total = 0
-    length = data[name].size
-    for i in range(length):
-        total += data[name].values[i]
-    return "%.2f" % (total/length)
+    for i in data[name]:
+        total += i
+    return "%.2f" % (total/data[name].size)
 
 def subplot(x, y):
     plt.ylabel(y)
     plt.legend(loc = 2) # Sets legend to top left
-    plt.xlim([start,end]) # Tighten the x axis
-    plt.xticks(np.arange(0,dates.size,dates.size/15)) # Set tick frequency
+    plt.xlim([dates.values[0], dates.values[-1]]) # Tighten the x axis
+    plt.ylim(0) # Start y axis stats at 0
+    tick_frequency = int(dates.size/15) # Set tick frequency
+    if tick_frequency < 1: # In case project has less than 15 data points
+        tick_frequency = 1
+    plt.xticks(np.arange(0, dates.size, tick_frequency)) # Start, stop, steps
 
 list = glob.glob('Data/*')
 data = pd.read_csv(list[-1])
 del data['Project ID'] # Delete unused columns
 
+project_name = data['Name'][0]
 dates = data['Date']
-
 dates = pd.to_datetime(dates).dt.strftime('%y-%m-%d') # Format date data
-start = dates.values[0]
-end = dates.values[-1]
 
 plt.figure(figsize=(15,10)) # Create figure
 
 plt.subplot(3,1,1) # Create subplots for the figure
-plt.title(data['Name'][0]) # Set title as project name
+plt.title(project_name) # Set title as project name
 line('Historical Download','k','Total Downloads\n'+str(data['Historical Download'].values[-1]))
 subplot(1, 'Total')
 
 plt.subplot(3,1,2)
-line('Daily Download','b','Total ' + average('Daily Download')) # Print daily average downloads
+line('Daily Download','b','Total ' + average('Daily Download'))
 line('Daily Unique Download','r','Unique ' + average('Daily Unique Download'))
 line('Daily Curse Forge Download','g','Curse Forge ' + average('Daily Curse Forge Download'))
 line('Daily Twitch App Download','#800080','Twitch App ' + average('Daily Twitch App Download'))
@@ -51,5 +52,4 @@ subplot(3, 'Points + Average')
 plt.xlabel('Date')
 
 today = datetime.today().strftime('%Y-%m-%d')
-plt.savefig('Graphs/'+today+'.png') # Save as image
-plt.show() # Displays the graph (optional)
+plt.savefig('Graphs/'+project_name+' Analytics '+today+'.png') # Save as image
