@@ -1,4 +1,4 @@
-# Curse Forge Mod Analytics
+# Curse Forge Project Analytics
 Simple Matplotlib program that plots data from [Curseforge Analytics](https://authors.curseforge.com/dashboard/projects). If you're a author on curseforge, your projects should appear at that link. [Click here](https://www.curseforge.com/project/create "Create a CurseForge Project") if you don't see any projects and would like to make your own.
 
 ## Getting Started
