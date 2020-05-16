@@ -25,4 +25,4 @@ Customize how the dates look on the x axis [here](Analytics/Analytics.pyw#L33).
 To see the python terminal, change the file extension for Analytics.pyw from ".pyw" to ".py".
 
 ## Thanks for trying this out!
-I hope this helps! Here's the [Example Mod (Standard Materials)](https://www.curseforge.com/minecraft/mc-mods/standardmaterials "Standard Materials CurseForge") that I used for example stats.
+I hope this helps! Here are the [Projects](https://www.curseforge.com/members/baconbombingdeveloper/projects "BaconBombingDeveloper CurseForge Projects") that I used for example stats.
