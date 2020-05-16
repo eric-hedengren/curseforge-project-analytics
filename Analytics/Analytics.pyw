@@ -24,12 +24,14 @@ def subplot(x, y):
         tick_frequency = 1
     plt.xticks(np.arange(0, dates.size, tick_frequency)) # Start, stop, steps
 
-list = glob.glob('Data/*')
-data = pd.read_csv(list[-1])
+project = glob.glob('Data/*')[-1]
+data = pd.read_csv(project)
 del data['Project ID'] # Delete unused columns
 
 project_name = data['Name'][0]
+
 dates = data['Date']
+
 dates = pd.to_datetime(dates).dt.strftime('%y-%m-%d') # Format date data
 
 plt.figure(figsize=(15,10)) # Create figure
@@ -51,5 +53,4 @@ line('Points','#FFD700','Points\n' + average('Points'))
 subplot(3, 'Points + Average')
 plt.xlabel('Date')
 
-today = datetime.today().strftime('%Y-%m-%d')
-plt.savefig('Graphs/'+project_name+' Analytics '+today+'.png') # Save as image
+plt.savefig('Graphs/'+project_name+' Analytics '+ project[project.index("_overview_v1_")+13 : len(project)-4] +'.png') # Save as image
