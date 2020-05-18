@@ -67,4 +67,4 @@ for current_file in current_projects:
     subplot(3, 'Points', 'Points')
 
     file_date = pd.to_datetime(raw_dates).dt.strftime('%Y-%m-%d')
-    plt.savefig('Graphs/'+project_name+' Analytics '+file_date[0]+'_'+file_date.values[-1],dpi=100)
+    plt.savefig('Graphs/'+project_name+' Analytics '+file_date[0]+'_'+file_date.values[-1],dpi=150)
