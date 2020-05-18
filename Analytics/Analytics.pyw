@@ -46,8 +46,8 @@ for current_file in current_projects:
 
     plt.figure(figsize=(17,11))
     font_size = 50
-    if len(project_name) > 45:
-        font_size = 30
+    if len(project_name) > 40:
+        font_size = 20
     plt.suptitle(project_name, fontsize=font_size)
 
     plt.subplot(3,1,2)
