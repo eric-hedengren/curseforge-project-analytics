@@ -55,10 +55,10 @@ for current_file in current_projects:
     subplot(1, 'Downloads', 'Total')
 
     plt.subplot(3,1,1)
-    line('Daily Download','b','Total '+ average('Daily Download'))
-    line('Daily Unique Download','r','Unique '+ average('Daily Unique Download'))
-    line('Daily Curse Forge Download','g','Curse Forge '+ average('Daily Curse Forge Download'))
     line('Daily Twitch App Download','#800080','Twitch App '+ average('Daily Twitch App Download'))
+    line('Daily Curse Forge Download','g','Curse Forge '+ average('Daily Curse Forge Download'))
+    line('Daily Unique Download','r','Unique '+ average('Daily Unique Download'))
+    line('Daily Download','b','Total '+ average('Daily Download'))
     subplot(2, 'Downloads', 'Daily Downloads')
 
     plt.subplot(3,1,3)
