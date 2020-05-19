@@ -15,11 +15,11 @@ def average(name):
     return '(avg %.2f)' % (total/data[name].size)
 
 def subplot(y, z):
-    plt.title(y) # Set subplot title
+    plt.title(y)
     plt.ylabel(z)
-    plt.legend(loc = 2) # Sets legend to top left
+    plt.legend(loc='upper left')
     plt.xlim([dates[0], dates.values[-1]]); plt.ylim(0) # Tighten the x/y axis
-    tick_frequency = int(dates.size/15) # Set tick frequency
+    tick_frequency = int(dates.size/15)
     if tick_frequency < 1: # In case the number is rounded to 0
         tick_frequency = 1
     plt.xticks(np.arange(0, dates.size, tick_frequency)) # Start, Stop, Steps
@@ -40,8 +40,7 @@ for current_file in current_projects:
     data = pd.read_csv(current_file)
     del data['Project ID']
 
-    raw_dates = data['Date']
-    dates = pd.to_datetime(raw_dates).dt.strftime('%y-%m-%d') # Format x axis date data
+    dates = pd.to_datetime(data['Date']).dt.strftime('%Y-%m-%d') # Format x axis date data
 
     plt.figure(figsize=(20,11))
 
@@ -53,8 +52,8 @@ for current_file in current_projects:
     plt.subplot(3,1,1)
     line('Daily Download','black','Total '+ average('Daily Download'),2.3)
     line('Daily Unique Download','red','Unique '+ average('Daily Unique Download'),2.2)
-    line('Daily Curse Forge Download','deepskyblue','Curse Forge '+ average('Daily Curse Forge Download'),2.1)
-    line('Daily Twitch App Download','purple','Twitch App '+ average('Daily Twitch App Download'))
+    line('Daily Curse Forge Download','green','Curse Forge '+ average('Daily Curse Forge Download'),2.1)
+    line('Daily Twitch App Download','#6441a5','Twitch App '+ average('Daily Twitch App Download'))
     subplot('Daily Downloads', 'Downloads')
 
     plt.subplot(3,1,2)
@@ -66,5 +65,4 @@ for current_file in current_projects:
     plt.xlabel('Dates')
     subplot('Points', 'Points')
 
-    file_date = pd.to_datetime(raw_dates).dt.strftime('%Y-%m-%d')
-    plt.savefig('Graphs/'+project_name+' Analytics '+file_date[0]+'_'+file_date.values[-1],dpi=150)
+    plt.savefig('Graphs/'+project_name+' Analytics '+dates[0]+'_'+dates.values[-1], dpi=150)
