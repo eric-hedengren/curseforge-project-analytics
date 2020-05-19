@@ -74,8 +74,9 @@ for current_file in current_projects:
 
     plt.subplot(3,1,3)
     p = 'Points'
-    line(p,'gold',p+'\n'+nonzeroaverage(p)+'\n'+average(p))
+    n = '\n'
+    line(p,'gold',p + n +nonzeroaverage(p)+ n +average(p))
     plt.xlabel('Dates')
-    subplot(p, p)
+    subplot(p,p)
 
     plt.savefig('Graphs/'+project_name+' Analytics '+dates[0]+'_'+dates.values[-1], dpi=150)
