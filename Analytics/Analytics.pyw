@@ -5,8 +5,8 @@ from datetime import datetime
 import numpy as np
 import glob
 
-def line(a, b, c): # Data, Color, Label
-    plt.plot_date(dates, data[a], b, label = c)
+def line(a, b, c, d=2): # Data, Color, Label
+    plt.plot_date(dates, data[a], b, label=c, zorder=d)
 
 def average(name):
     total = 0
@@ -14,9 +14,9 @@ def average(name):
         total += i
     return '(avg %.2f)' % (total/data[name].size)
 
-def subplot(x, y, z):
-    plt.title(z) # Set subplot title
-    plt.ylabel(y)
+def subplot(y, z):
+    plt.title(y) # Set subplot title
+    plt.ylabel(z)
     plt.legend(loc = 2) # Sets legend to top left
     plt.xlim([dates[0], dates.values[-1]]); plt.ylim(0) # Tighten the x/y axis
     tick_frequency = int(dates.size/15) # Set tick frequency
@@ -40,31 +40,31 @@ for current_file in current_projects:
     data = pd.read_csv(current_file)
     del data['Project ID']
 
-    project_name = data['Name'][0]
     raw_dates = data['Date']
     dates = pd.to_datetime(raw_dates).dt.strftime('%y-%m-%d') # Format x axis date data
 
-    plt.figure(figsize=(17,11))
-    font_size = 50
-    if len(project_name) > 40:
-        font_size = 20
-    plt.suptitle(project_name, fontsize=font_size)
+    plt.figure(figsize=(20,11))
 
-    plt.subplot(3,1,2)
-    line('Historical Download','k','Total Downloads\n'+str(data['Historical Download'].values[-1]))
-    subplot(1, 'Downloads', 'Total')
+    project_name = data['Name'][0]
+    if len(project_name) > 40:
+        raise Exception('Project name is way too long')
+    plt.suptitle(project_name, fontsize=50)
 
     plt.subplot(3,1,1)
-    line('Daily Twitch App Download','#800080','Twitch App '+ average('Daily Twitch App Download'))
-    line('Daily Curse Forge Download','g','Curse Forge '+ average('Daily Curse Forge Download'))
-    line('Daily Unique Download','r','Unique '+ average('Daily Unique Download'))
-    line('Daily Download','b','Total '+ average('Daily Download'))
-    subplot(2, 'Downloads', 'Daily Downloads')
+    line('Daily Download','black','Total '+ average('Daily Download'),2.3)
+    line('Daily Unique Download','red','Unique '+ average('Daily Unique Download'),2.2)
+    line('Daily Curse Forge Download','deepskyblue','Curse Forge '+ average('Daily Curse Forge Download'),2.1)
+    line('Daily Twitch App Download','purple','Twitch App '+ average('Daily Twitch App Download'))
+    subplot('Daily Downloads', 'Downloads')
+
+    plt.subplot(3,1,2)
+    line('Historical Download','black','Total Downloads\n'+str(data['Historical Download'].values[-1]))
+    subplot('Total', 'Downloads')
 
     plt.subplot(3,1,3)
-    line('Points','#FFD700','Points\n'+ average('Points'))
+    line('Points','gold','Points\n'+ average('Points'))
     plt.xlabel('Dates')
-    subplot(3, 'Points', 'Points')
+    subplot('Points', 'Points')
 
     file_date = pd.to_datetime(raw_dates).dt.strftime('%Y-%m-%d')
     plt.savefig('Graphs/'+project_name+' Analytics '+file_date[0]+'_'+file_date.values[-1],dpi=150)
