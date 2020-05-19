@@ -14,6 +14,18 @@ def average(name):
         total += i
     return '(avg %.2f)' % (total/data[name].size)
 
+def nonzeroaverage(name):
+    total = 0
+    length = data[name].size
+    for i in data[name]:
+        if i != 0:
+            total += i
+        else:
+            length -= 1
+    if total == 0:
+        length = 1
+    return '(non zero avg %.2f)' % (total/length)
+
 def subplot(y, z):
     plt.title(y)
     plt.ylabel(z)
@@ -61,8 +73,9 @@ for current_file in current_projects:
     subplot('Total', 'Downloads')
 
     plt.subplot(3,1,3)
-    line('Points','gold','Points\n'+ average('Points'))
+    p = 'Points'
+    line(p,'gold',p+'\n'+nonzeroaverage(p)+'\n'+average(p))
     plt.xlabel('Dates')
-    subplot('Points', 'Points')
+    subplot(p, p)
 
     plt.savefig('Graphs/'+project_name+' Analytics '+dates[0]+'_'+dates.values[-1], dpi=150)
