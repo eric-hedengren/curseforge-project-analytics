@@ -18,4 +18,4 @@ The files in [Mod Name/Data](Analytics/Data "Data Folder") and [Mod Name/Graphs]
 If you're adding new analytics, for a new day for example, the Analytics program automatically finds the latest files from different projects in your Data Folder, or the most recent one by date, so try not to rename your data files.
 
 ## Thanks for trying this out!
-I hope this helps! Here are the [Projects](https://www.curseforge.com/members/baconbombingdeveloper/projects "BaconBombingDeveloper CurseForge Projects") that I used for example stats.
+I hope this helps! Here are the [projects](https://www.curseforge.com/members/baconbombingdeveloper/projects "BaconBombingDeveloper CurseForge Projects") that I used for example stats.
