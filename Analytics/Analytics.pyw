@@ -6,18 +6,18 @@ import numpy as np
 import glob
 
 def line(a, b, c, d=2): # Data, Color, Label
-    plt.plot_date(dates, data[a], b, label=c, zorder=d)
+    plt.plot_date(display_dates, data[a], b, label=c, zorder=d)
 
 def average(name):
-    total = 0
-    for i in data[name]:
+    total = 0; current_data = data[name]
+    for i in current_data:
         total += i
-    return '(avg %.2f)' % (total/data[name].size)
+    return '(avg %.2f)' % (total/current_data.size)
 
 def nonzeroaverage(name):
-    total = 0
-    length = data[name].size
-    for i in data[name]:
+    total = 0; current_data = data[name]
+    length = current_data.size
+    for i in current_data:
         if i != 0:
             total += i
         else:
@@ -29,12 +29,10 @@ def nonzeroaverage(name):
 def subplot(y, z):
     plt.title(y)
     plt.ylabel(z)
+    plt.tick_params(labelright=True, right=True)
     plt.legend(loc='upper left')
-    plt.xlim([dates[0], dates.values[-1]]); plt.ylim(0) # Tighten the x/y axis
-    tick_frequency = int(dates.size/15)
-    if tick_frequency < 1: # In case the number is rounded to 0
-        tick_frequency = 1
-    plt.xticks(np.arange(0, dates.size, tick_frequency)) # Start, Stop, Steps
+    plt.xlim([display_dates[0], display_dates.values[-1]]); plt.ylim(0) # Tighten the x/y axis
+    plt.xticks(np.arange(0, date_size, tick_frequency)) # Start, Stop, Steps
 
 data_files = glob.glob('Data/*')
 current_projects = []
@@ -52,7 +50,14 @@ for current_file in current_projects:
     data = pd.read_csv(current_file)
     del data['Project ID']
 
-    dates = pd.to_datetime(data['Date']).dt.strftime('%Y-%m-%d') # Format x axis date data
+    dates = pd.to_datetime(data['Date']).dt.strftime('%Y-%m-%d')
+    display_dates = pd.to_datetime(dates).dt.strftime('%y-%m-%d') # Format x axis dates display
+
+    date_size = dates.size
+    tick_frequency = int(date_size/15)
+
+    if tick_frequency < 1: # In case the number is rounded to 0
+        tick_frequency = 1
 
     plt.figure(figsize=(20,11))
 
