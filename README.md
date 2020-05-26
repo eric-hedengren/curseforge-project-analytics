@@ -19,3 +19,5 @@ If you're adding new analytics, for a new day for example, the Analytics program
 
 ## Thanks for trying this out!
 I hope this helps! Here are the [projects](https://www.curseforge.com/members/baconbombingdeveloper/projects "BaconBombingDeveloper CurseForge Projects") that I used for example stats.
+
+If you like this idea and think it should be integrated into the curse forge webpage, you can vote for the [feature request](https://twitch.uservoice.com/forums/915910-game-mods-curseforge/suggestions/40317994-plots-for-author-project-analytics "Vote on Twitch").
