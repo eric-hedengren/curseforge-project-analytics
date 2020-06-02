@@ -47,7 +47,7 @@ for current_file in current_projects:
     date_size = dates.size
     tick_frequency = int(date_size/15)
 
-    if tick_frequency < 1: # In case the number is rounded to 0
+    if tick_frequency < 1: # In case the number was rounded to 0
         tick_frequency = 1
 
     plt.figure(figsize=(20,11))
@@ -73,7 +73,7 @@ for current_file in current_projects:
     plt.subplot(3,1,3)
     p = 'Points'
     dp = data[p]
-    details_line(p,'gold',p,mean=dp[dp != 0].mean())
+    details_line(p,'gold',p+'\n'+str(dp.sum()),mean=dp[dp != 0].mean())
     plt.xlabel('Dates')
     subplot(p,p)
 
