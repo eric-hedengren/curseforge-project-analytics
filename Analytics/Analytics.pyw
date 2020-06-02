@@ -58,23 +58,28 @@ for current_file in current_projects:
         raise Exception('Project name is way too long')
     plt.suptitle(project_name, fontsize=50)
 
-    plt.subplot(3,1,1)
+    t = 3
+    if data['Points'].sum() == 0:
+        t = 2
+
+    plt.subplot(t,1,1)
     current_total = str(data['Historical Download'].values[-1])
     line('Historical Download','white','Total Downloads\n'+current_total)
     subplot('Total', 'Downloads')
 
-    plt.subplot(3,1,2)
+    plt.subplot(t,1,2)
     details_line('Daily Download','white','Total',2.03)
     details_line('Daily Unique Download','red','Unique',2.02)
     details_line('Daily Curse Forge Download','green','Curse Forge',2.01)
     details_line('Daily Twitch App Download','#6441a5','Twitch App')
     subplot('Daily Downloads', 'Downloads')
 
-    plt.subplot(3,1,3)
-    p = 'Points'
-    dp = data[p]
-    details_line(p,'gold',p+'\n'+str(dp.sum()),mean=dp[dp != 0].mean())
-    plt.xlabel('Dates')
-    subplot(p,p)
+    if data['Points'].sum() != 0:
+        plt.subplot(t,1,3)
+        p = 'Points'
+        dp = data[p]
+        details_line(p,'gold',p+'\n'+str(dp.sum()),mean=dp[dp != 0].mean())
+        plt.xlabel('Dates')
+        subplot(p,p)
 
     plt.savefig('Graphs/'+project_name+' Analytics '+dates[0]+'_'+dates.values[-1], dpi=150)
