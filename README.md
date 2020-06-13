@@ -15,9 +15,9 @@ The files in [Mod Name/Data](Analytics/Data "Data Folder") and [Mod Name/Graphs]
 To create a graph, use the [RunGraphGenerator.bat](Analytics/Run/RunGraphGenerator.bat), or run [Analytics.pyw](Analytics/Analytics.pyw) with python, and using either of these require steps 1 and 2. Your graph(s) should save to the "Graphs Folder", which uses the most recent project files in the "Data Folder". If this step fails to execute, try uninstalling then reinstalling python and the packages from your computer.
 
 ### 5. Adding More Data
-If you don't want to delete your old data files, simply copy the new data into your Data Folder and the Analytics file will only create new graphs for the lastest project data. The Analytics file automatically finds the latest files from different projects in your Data Folder, or the most recent one by date, so try not to rename your data files.
+If you don't want to delete your old data files, simply copy the new data into your Data Folder and the Analytics file will only create new graphs for the lastest project data by date. Make sure to not rename files or the program won't be able to find the most recent one by date.
 
 ## Thanks for trying this out!
 I hope this helps! Here are the [projects](https://www.curseforge.com/members/baconbombingdeveloper/projects "BaconBombingDeveloper Curse Forge Projects") that I used for example stats.
 
-If you like this idea and think it should be integrated into the Curse Forge webpage, you can vote for the [feature request](https://twitch.uservoice.com/forums/915910-game-mods-curseforge/suggestions/40317994-plots-for-author-project-analytics "Vote on User Voice").
+If you like this idea and think it should be integrated into the Curse Forge webpage, you can vote for the [feature request](https://twitch.uservoice.com/forums/915910-game-mods-curseforge/suggestions/40317994-plots-for-author-project-analytics "Vote on User Voice") on twitch user voice.
