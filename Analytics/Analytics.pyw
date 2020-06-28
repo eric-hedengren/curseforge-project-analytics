@@ -2,6 +2,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from numpy import arange
 from glob import glob
+from os import remove
 
 def line(name, color, label, order=2): # Data, Color, Label
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
@@ -26,12 +27,16 @@ def subplot(y, z):
 data_files = glob('Data/*')
 current_projects = []
 
+for i in glob('Graphs/*'):
+    remove(i)
+
 for i, name in enumerate(data_files):
     if i == len(data_files)-1:
         current_projects.append(name)
         break
     next_name = data_files[i+1]
-    if name[:name.index("_overview_v1_")] == next_name[:next_name.index("_overview_v1_")]:
+    if name[:name.index('_overview_v')] == next_name[:next_name.index('_overview_v')]:
+        remove(name)
         continue
     current_projects.append(name)
 
@@ -74,7 +79,7 @@ for current_file in current_projects:
     details_line('Daily Twitch App Download','#6441a5','Twitch App')
     subplot('Daily Downloads', 'Downloads')
 
-    if data['Points'].sum() != 0:
+    if t == 3:
         plt.subplot(t,1,3)
         p = 'Points'
         dp = data[p]
