@@ -31,7 +31,7 @@ for i, name in enumerate(data_files):
         current_projects.append(name)
         break
     next_name = data_files[i+1]
-    if name[:name.index("_overview_v1_")] == next_name[:next_name.index("_overview_v1_")]:
+    if name[:name.index("_overview_")] == next_name[:next_name.index("_overview_")]:
         continue
     current_projects.append(name)
 
