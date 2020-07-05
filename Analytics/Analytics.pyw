@@ -2,11 +2,12 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from numpy import arange
 from glob import glob
+from os import remove
 
-def line(name, color, label, order=2): # Data, Color, Label
+def line(name, color, label, order=2):
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
 
-def details_line(name, color, label, order=2, mean=None): # Data, Color, Label
+def details_line(name, color, label, order=2, mean=None):
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
     if mean == None:
         mean = data[name].mean()
@@ -20,18 +21,22 @@ def subplot(y, z):
     plt.ylabel(z)
     plt.tick_params(labelright=True, right=True)
     plt.legend(loc='upper left')
-    plt.xlim([begin, end]); plt.ylim(0) # Tighten the x/y axis
+    plt.xlim([begin, end]); plt.ylim(0)
     plt.xticks(arange(0, date_size, tick_frequency)) # Start, Stop, Steps
 
 data_files = glob('Data/*')
 current_projects = []
+
+for i in glob('Graphs/*'):
+    remove(i)
 
 for i, name in enumerate(data_files):
     if i == len(data_files)-1:
         current_projects.append(name)
         break
     next_name = data_files[i+1]
-    if name[:name.index("_overview_")] == next_name[:next_name.index("_overview_")]:
+    if name[:name.index('_overview_v1_')] == next_name[:next_name.index('_overview_v1_')]:
+        remove(name)
         continue
     current_projects.append(name)
 
@@ -47,11 +52,11 @@ for current_file in current_projects:
     date_size = dates.size
     tick_frequency = int(date_size/15)+1
 
-    if tick_frequency < 1: # In case the number was rounded to 0
+    if tick_frequency < 1:
         tick_frequency = 1
 
     plt.figure(figsize=(20,11))
-    plt.style.use('dark_background') # Toggle dark mode
+    plt.style.use('dark_background')
 
     project_name = data['Name'][0]
     if len(project_name) > 40:
@@ -74,7 +79,7 @@ for current_file in current_projects:
     details_line('Daily Twitch App Download','#6441a5','Twitch App')
     subplot('Daily Downloads', 'Downloads')
 
-    if data['Points'].sum() != 0:
+    if t == 3:
         plt.subplot(t,1,3)
         p = 'Points'
         dp = data[p]
