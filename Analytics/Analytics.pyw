@@ -4,10 +4,10 @@ from numpy import arange
 from glob import glob
 from os import remove
 
-def line(name, color, label, order=2): # Data, Color, Label
+def line(name, color, label, order=2):
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
 
-def details_line(name, color, label, order=2, mean=None): # Data, Color, Label
+def details_line(name, color, label, order=2, mean=None):
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
     if mean == None:
         mean = data[name].mean()
@@ -21,7 +21,7 @@ def subplot(y, z):
     plt.ylabel(z)
     plt.tick_params(labelright=True, right=True)
     plt.legend(loc='upper left')
-    plt.xlim([begin, end]); plt.ylim(0) # Tighten the x/y axis
+    plt.xlim([begin, end]); plt.ylim(0)
     plt.xticks(arange(0, date_size, tick_frequency)) # Start, Stop, Steps
 
 data_files = glob('Data/*')
@@ -52,11 +52,11 @@ for current_file in current_projects:
     date_size = dates.size
     tick_frequency = int(date_size/15)+1
 
-    if tick_frequency < 1: # In case the number was rounded to 0
+    if tick_frequency < 1:
         tick_frequency = 1
 
     plt.figure(figsize=(20,11))
-    plt.style.use('dark_background') # Toggle dark mode
+    plt.style.use('dark_background')
 
     project_name = data['Name'][0]
     if len(project_name) > 40:
