@@ -9,10 +9,12 @@ def line(name, color, label, order=2):
 
 def details_line(name, color, label, order=2, mean=None):
     plt.plot_date(display_dates, data[name], color, label=label, zorder=order)
+
     if mean == None:
         mean = data[name].mean()
     high = data[name].max()
     style=['dotted','dashed']
+
     for i, j in enumerate([mean,high]):
         plt.plot_date([begin, end], [j,j], color, ls=style[i], alpha=.5, zorder=1.99)
 
@@ -24,11 +26,12 @@ def subplot(y, z):
     plt.xlim([begin, end]); plt.ylim(0)
     plt.xticks(arange(0, date_size, tick_frequency)) # Start, Stop, Steps
 
+graphs = glob('Graphs/*')
+for i in graphs:
+    remove(i)
+
 data_files = glob('Data/*')
 current_projects = []
-
-for i in glob('Graphs/*'):
-    remove(i)
 
 for i, name in enumerate(data_files):
     if i == len(data_files)-1:
@@ -40,9 +43,18 @@ for i, name in enumerate(data_files):
         continue
     current_projects.append(name)
 
+# create summary dataframe for overview graph
+
+# total dataframe adds values based on dates
+
+# new rows created for new dates
+
+# gapped dates create 0 placeholders in columns 
+
+# saved as csv file and file name added to current_projects list
+
 for current_file in current_projects:
     data = pd.read_csv(current_file)
-    del data['Project ID']
 
     dates = pd.to_datetime(data['Date']).dt.strftime('%Y-%m-%d')
     display_dates = pd.to_datetime(dates).dt.strftime('%y-%m-%d') # Format x axis date display
