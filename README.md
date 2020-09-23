@@ -1,6 +1,8 @@
 # Curse Forge Project Analytics
 Simple Matplotlib program that plots data from [Curse Forge Analytics](https://authors.curseforge.com/dashboard/projects). If you're a author on Curse Forge, your projects should appear at that link. [Click here](https://www.curseforge.com/project/create "Create a Curse Forge Project") if you don't see any projects and would like to make your own.
 
+Use the latest release instead of the main branch in order to avoid bugs.
+
 ## Getting Started
 ### 1. Python Install
 If python is already on your computer, skip this step. First get the [Latest Python Files](https://www.python.org/downloads/ "Python Download"). When opening the installer, make sure you select "Add Python -version- to PATH". If you don't have admin access, unselect "Install launcher for all users (recommended)", it will still work on your user.
